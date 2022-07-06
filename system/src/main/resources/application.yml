@@ -1,1 +1,37 @@
-
+server:
+  port: 8090
+spring:
+  redis:
+# 集群配置
+#    cluster:
+#      nodes: 192.168.20.214:7000
+#    password: Zhny_2021
+#    lettuce:
+#      pool:
+#        max-active: 10
+#        max-idle: 8
+#        min-idle: 2
+#        max-wait: 10
+#    sentinel:
+#      master: mymaster
+#      nodes:
+#        - 192.168.20.214:27001
+#        - 192.168.20.214:27003
+#        - 192.168.20.214:27002
+##      password: Zhny_2021
+#      lettuce:
+#        pool:
+#          max-active: 10
+#          max-idle: 8
+#          min-idle: 2
+#          max-wait: 100
+##############单机
+    host: 192.168.20.214
+    password: zhny_2021
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 8
+        min-idle: 2
+        max-wait: 100
+    port: 6379
