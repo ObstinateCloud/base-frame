@@ -12,4 +12,9 @@
 <li>增加swagger依赖:<br>
  swagger访问地址: http://localhost:8080/swagger-ui/index.html#/
 </li>
+<li>增加Redis依赖<br>
+  1.单机模式<br>
+  2.集群模式<br>
+  3.主从模式<br>
+</li>
 </ol>
