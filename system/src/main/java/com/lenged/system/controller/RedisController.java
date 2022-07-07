@@ -24,19 +24,18 @@ public class RedisController {
     @Autowired
     private  StringRedisTemplate stringRedisTemplate;
 
-    @ApiOperation("存入值")
+    @ApiOperation("存入String值")
     @GetMapping("/set/{key}/{value}")
     public BaseResponse setValue(@PathVariable("key") String key, @PathVariable("value") String value) {
         stringRedisTemplate.opsForValue().set(key, value);
         return BaseResponse.success();
     }
 
-    @ApiOperation("取值")
+    @ApiOperation("取String值")
     @GetMapping("/get/{key}")
     public BaseResponse getValue(@PathVariable("key") String key) {
         return BaseResponse.success(stringRedisTemplate.opsForValue().get(key));
     }
-
 
 
 }
