@@ -25,10 +25,10 @@
   mysql单数据源模式<br>
 </li>
 <li>
-  -集成hutool工具包
+  集成hutool工具包
 </li>
 <li>
-  -集成多数据源
+  -集成mybatis-plus多数据源
 </li>
 <li>
   -集成elasticsearch

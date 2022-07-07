@@ -1,6 +1,7 @@
 package com.lenged.system.controller;
 
 import cn.hutool.core.date.DateUtil;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.lenged.system.entity.User;
 import com.lenged.system.mapper.UserMapper;
 import io.swagger.annotations.Api;
@@ -28,11 +29,19 @@ public class MysqlController {
     @Autowired
     private UserMapper userMapper;
 
-    @ApiOperation("查询所有用户")
-    @GetMapping("getUsers")
-    public List<User> getUsers(){
+    @ApiOperation("查询所有用户-主库")
+    @GetMapping("getUsersMaster")
+    public List<User> getUsersMaster(){
         log.info("current time:"+ DateUtil.now());
        return userMapper.selectList(null);
+    }
+
+    @ApiOperation("查询所有用户-从库")
+    @GetMapping("getSlaveUsers")
+    @DS("config-db")
+    public List<User> getSlaveUsers(){
+        log.info("current time:"+ DateUtil.now());
+        return userMapper.selectList(null);
     }
 
 
