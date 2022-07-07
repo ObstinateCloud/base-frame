@@ -42,10 +42,10 @@
 <li>
   -集成文件存储
 </li>
-<li>
-  -集成dubbo
-</li>
 <li>集成easy-poi</li>
+<li>
+ 集成Security
+</li>
 </ol>
 ------------专用内容------------
 <ol>
@@ -54,5 +54,26 @@
 </li>
 <li>
  集成hsf
+</li>
+</ol>
+------------spring cloud------------
+<ol>
+<li>
+ 集成feign
+</li>
+<li>
+ 集成nacos
+</li>
+<li>
+ 集成Security
+</li>
+<li>
+ 集成Hystrix
+</li>
+<li>
+ 集成Ribbon
+</li>
+<li>
+ 集成Spring Cloud Config
 </li>
 </ol>

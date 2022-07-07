@@ -1,6 +1,10 @@
 package com.lenged.system.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 /**
  * @title: User
@@ -14,4 +18,8 @@ public class User {
     private String name;
     private Integer age;
     private String email;
+
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")//出参格式化
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")//入参格式化
+    private Date createDate;
 }
