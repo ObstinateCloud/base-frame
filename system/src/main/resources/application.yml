@@ -63,10 +63,16 @@ spring:
           url: jdbc:mysql://localhost:3306/nacos?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
           username: root
           password: zjy123
-
+  elasticsearch:
+    rest:
+      uris: 192.168.20.216:9200
+      connection-timeout: 15
+#  jpa:
+#    show-sql: true
 #mybatis-plus 打印日志
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-
+logging:
+  level:
+   tracer: trace
