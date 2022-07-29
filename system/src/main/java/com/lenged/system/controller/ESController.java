@@ -1,5 +1,6 @@
 package com.lenged.system.controller;
 
+import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -23,7 +24,6 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.support.master.AcknowledgedResponse;
 import org.elasticsearch.action.update.UpdateRequest;
 import org.elasticsearch.action.update.UpdateResponse;
-import org.elasticsearch.client.ElasticsearchClient;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.indices.CreateIndexRequest;
@@ -76,6 +76,7 @@ public class ESController {
 
     @Autowired
     RestHighLevelClient restHighLevelClient;
+
 
     @ApiOperation(value = "继承ElasticsearchRepository 父类默认新增方法",position = 1)
     @GetMapping("put")
@@ -190,7 +191,7 @@ public class ESController {
                     "    }\n" +
                     "  }\n" +
                     "}";
-            createIndexRequest.mapping(mapping, XContentType.JSON);
+//            createIndexRequest.mapping(mapping, XContentType.JSON);
             createIndexResponse = restHighLevelClient.indices().create(createIndexRequest, RequestOptions.DEFAULT);
         } catch (IOException e) {
             e.printStackTrace();
@@ -248,7 +249,7 @@ public class ESController {
         IndexRequest indexRequest = new IndexRequest(index);
         indexRequest.id("1");
         indexRequest.timeout(TimeValue.timeValueSeconds(5));
-        indexRequest.source(JSON.toJSONString(build),XContentType.JSON);
+        indexRequest.source(JSON.toJSONString(build), XContentType.JSON);
         //执行请求
         IndexResponse indexResponse = null;
         try {

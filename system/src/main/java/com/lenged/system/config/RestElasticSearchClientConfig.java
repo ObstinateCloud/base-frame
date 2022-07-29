@@ -22,13 +22,6 @@ import org.springframework.data.elasticsearch.config.AbstractElasticsearchConfig
 //@Configuration
 public class RestElasticSearchClientConfig extends AbstractElasticsearchConfiguration {
 
-//    @Bean
-//    public ElasticsearchClient getElasticsearchClient(){
-//        RestClient restClient = RestClient.builder(new HttpHost("192.168.20.216",9200)).build();
-//        ElasticsearchTransport elasticsearchTransport = new RestClientTransport(restClient,new JacksonJsonpMapper());
-//        ElasticsearchClient elasticsearchClient = new ElasticsearchClient(elasticsearchTransport);
-//        return elasticsearchClient;
-//    }
 
     @Override
     @Bean

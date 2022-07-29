@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>system</artifactId>
+
+    <properties>
+        <elasticsearch-rhlc>7.6.2</elasticsearch-rhlc>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -51,10 +55,23 @@
             <artifactId>hutool-all</artifactId>
             <version>5.7.5</version>
         </dependency>
+
+        <dependency>
+            <groupId>jakarta.json</groupId>
+            <artifactId>jakarta.json-api</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
         </dependency>
+
+
+
+
+
 
     </dependencies>
 
