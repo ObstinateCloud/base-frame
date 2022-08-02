@@ -1,74 +1,11 @@
 server:
   port: 8090
 spring:
-  redis:
-# 集群配置
-#    cluster:
-#      nodes:
-#       - 127.0.0.1:6381
-#       - 127.0.0.1:6382
-#       - 127.0.0.1:6383
-#       - 127.0.0.1:6384
-#       - 127.0.0.1:6385
-#       - 127.0.0.1:6386
-#    password: xxxxx
-#    lettuce:
-#      pool:
-#        max-active: 10
-#        max-idle: 8
-#        min-idle: 2
-#        max-wait: 10
-##############哨兵模式
-#    password: xxxx
-#    sentinel:
-#      master: mymaster
-#      nodes:
-#        - 192.168.20.214:27001
-#        - 192.168.20.214:27003
-#        - 192.168.20.214:27002
-#      lettuce:
-#        pool:
-#          max-active: 10
-#          max-idle: 8
-#          min-idle: 2
-#          max-wait: 100
-#    timeout: 5000
-##############单机
-    host: 192.168.20.214
-    password: zhny_2021
-    lettuce:
-      pool:
-        max-active: 10
-        max-idle: 8
-        min-idle: 2
-        max-wait: 100
-    port: 6379
-#mysql 单数据源
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://localhost:3306/mytest?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
-#    username: root
-#    password: zjy123
-#mysql 多数据源
-  datasource:
-    dynamic:
-      datasource:
-        master:
-          driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://localhost:3306/mytest?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
-          username: root
-          password: zjy123
-        config-db:
-          driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://localhost:3306/nacos?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
-          username: root
-          password: zjy123
-  elasticsearch:
-    rest:
-      uris: 192.168.20.216:9200
-      connection-timeout: 15
-#  jpa:
-#    show-sql: true
+  profiles:
+    active: nanri
+  jpa:
+    show-sql: true
+
 #mybatis-plus 打印日志
 mybatis-plus:
   configuration:

@@ -31,10 +31,13 @@
   集成mybatis-plus多数据源
 </li>
 <li>
-  -集成elasticsearch
+  集成elasticsearch
+   <br>RestHighLevelClient 7.17版本之前
+   <br>Java API Client 7.17版本之后
 </li>
 <li>
-  -集成定时任务
+  集成定时任务
+  <br>xxl-job
 </li>
 <li>
   -集成mq
