@@ -40,7 +40,11 @@
   <br>xxl-job
 </li>
 <li>
+  logback配置
+</li>
+<li>
   -集成mq
+  <br>rocket mq
 </li>
 <li>
   -集成文件存储

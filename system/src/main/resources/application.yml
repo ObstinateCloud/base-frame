@@ -13,3 +13,5 @@ mybatis-plus:
 logging:
   level:
    tracer: trace
+  file:
+    path: log
