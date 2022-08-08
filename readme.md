@@ -32,7 +32,19 @@
 </li>
 <li>
   集成elasticsearch
-   <br>RestHighLevelClient 7.17版本之前
+   <br>RestHighLevelClient 7.17版本之前,自定义版本
+   <pre>
+           &lt;dependency>
+                &lt;groupId>org.elasticsearch&lt;/groupId>
+                &lt;artifactId>elasticsearch&lt;/artifactId>
+                &lt;version>x.x.x&lt;/version>
+           &lt;/dependency>
+           &lt;dependency>
+               &lt;groupId>org.elasticsearch.client&lt;/groupId>
+               &lt;artifactId>elasticsearch-rest-high-level-client&lt;/artifactId>
+               &lt;version>x.x.x&lt;/version>
+           &lt;/dependency>
+           </pre>
    <br>Java API Client 7.17版本之后
 </li>
 <li>
