@@ -49,17 +49,18 @@
 </li>
 <li>
   集成定时任务
-  <br>xxl-job
+  <br>xxl-job <a href="https://www.xuxueli.com/xxl-job/">官方文档</a>
 </li>
 <li>
-  logback配置
+  logback配置 
 </li>
 <li>
-  -集成mq
-  <br>rocket mq
+  集成mq
+  <br>Rocket mq <a href="https://github.com/apache/rocketmq/blob/master/docs/cn/RocketMQ_Example.md">官方文档</a>
 </li>
 <li>
   -集成文件存储
+  <br> minio <a href="http://docs.minio.org.cn/docs/">官网</a>
 </li>
 <li>集成easy-poi</li>
 <li>
