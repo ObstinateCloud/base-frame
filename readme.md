@@ -25,14 +25,14 @@
   mysql单数据源模式<br>
 </li>
 <li>
-  集成hutool工具包
+  集成hutool工具包 <a href="https://hutool.cn/docs/#/">官网</a>
 </li>
 <li>
-  集成mybatis-plus多数据源
+  集成mybatis-plus多数据源 <a href="https://baomidou.com/pages/24112f/">官网</a>
 </li>
 <li>
-  集成elasticsearch
-   <br>RestHighLevelClient 7.17版本之前,自定义版本
+  集成elasticsearch 
+   <br>RestHighLevelClient 7.17版本之前,自定义版本 <a href="https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/index.html">官网</a>
    <pre>
            &lt;dependency>
                 &lt;groupId>org.elasticsearch&lt;/groupId>
@@ -59,10 +59,12 @@
   <br>Rocket mq <a href="https://github.com/apache/rocketmq/blob/master/docs/cn/RocketMQ_Example.md">官方文档</a>
 </li>
 <li>
-  -集成文件存储
+  集成文件存储
   <br> minio <a href="http://docs.minio.org.cn/docs/">官网</a>
 </li>
-<li>集成easy-poi</li>
+<li>集成easy-poi
+ </li>
+<li>集成itext7</li>
 <li>
  集成Security
 </li>
