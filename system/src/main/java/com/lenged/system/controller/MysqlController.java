@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -42,6 +43,19 @@ public class MysqlController {
     public List<User> getSlaveUsers(){
         log.info("current time:"+ DateUtil.now());
         return userMapper.selectList(null);
+    }
+
+    @ApiOperation("新增用户-主库")
+    @GetMapping("setUser")
+    public int insertUser(){
+        User user = new User();
+        user.setAge(13);
+        user.setEmail("gamil");
+        user.setCreateDate(new Date());
+        user.setName("user1");
+        int insert = userMapper.insert(user);
+        System.out.println(insert);
+        return insert;
     }
 
 
