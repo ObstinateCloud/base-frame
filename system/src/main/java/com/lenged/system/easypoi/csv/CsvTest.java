@@ -6,6 +6,7 @@ import cn.afterturn.easypoi.csv.entity.CsvExportParams;
 import cn.afterturn.easypoi.csv.entity.CsvImportParams;
 import cn.afterturn.easypoi.excel.entity.params.ExcelExportEntity;
 import cn.afterturn.easypoi.handler.inter.IReadHandler;
+import cn.afterturn.easypoi.handler.inter.IWriter;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileInputStream;
@@ -77,6 +78,10 @@ public class CsvTest {
             public void handler(Object o) {
                 System.out.println(o.toString());
                 msgClients.add((MsgClient) o);
+                //大数据量处理 每1000条做一次处理
+                if (msgClients.size()==1000) {
+                    //大数据量处理逻辑
+                }
             }
 
             @Override
@@ -157,6 +162,11 @@ public class CsvTest {
         System.out.println(System.currentTimeMillis()-start);
     }
 
+
+    /**
+     * 导出map数据
+     * @throws IOException
+     */
     @Test
     public void csvExportMap() throws IOException {
         System.out.println(System.getProperty("user.dir"));
@@ -184,14 +194,54 @@ public class CsvTest {
 
         }
         FileOutputStream outputStream = new FileOutputStream("./target/csvExportMap.csv");
-        List<ExcelExportEntity> excelExportEntities = new ArrayList<>();
-        ExcelExportEntity excelExportEntity = new ExcelExportEntity();
-        excelExportEntity.setName("12333");
-        excelExportEntity.setKey("name");
-        excelExportEntities.add(excelExportEntity);
-        CsvExportUtil.exportCsv(exportParams, excelExportEntities,outputStream);
-        System.out.println(System.currentTimeMillis()-start);
+        List<ExcelExportEntity> excelExportEntities = fillMapTitle();
+        IWriter<Void> voidIWriter = CsvExportUtil.exportCsv(exportParams, excelExportEntities, outputStream);
+        //write方法默认做了单批1000条处理
+        voidIWriter.write(mapList);
+        System.out.println("耗时："+(System.currentTimeMillis()-start));
     }
 
+    //封装map列表表头
+    private List<ExcelExportEntity> fillMapTitle(){
+
+        //封装一级表头
+        List<ExcelExportEntity> excelExportEntities = new ArrayList<>();
+        ExcelExportEntity excelExportEntity1 = new ExcelExportEntity();
+        //表头名字
+        excelExportEntity1.setName("客户端名称");
+        //map中对应key名字
+        excelExportEntity1.setKey("clientName");
+
+        ExcelExportEntity excelExportEntity2 = new ExcelExportEntity();
+        //表头名字
+        excelExportEntity2.setName("生日");
+        //map中对应key名字
+        excelExportEntity2.setKey("birthday");
+
+        ExcelExportEntity excelExportEntity3 = new ExcelExportEntity();
+        //表头名字
+        excelExportEntity3.setName("客户端电话");
+        //map中对应key名字
+        excelExportEntity3.setKey("clientPhone");
+        excelExportEntities.add(excelExportEntity1);
+        excelExportEntities.add(excelExportEntity2);
+        excelExportEntities.add(excelExportEntity3);
+
+        //封装list类型数据
+        ExcelExportEntity subExcelExportEntity = new ExcelExportEntity();
+        subExcelExportEntity.setKey("subList");
+        subExcelExportEntity.setName("subList");
+        excelExportEntities.add(subExcelExportEntity);
+
+        ExcelExportEntity excelExportEntity4 = new ExcelExportEntity();
+        //表头名字
+        excelExportEntity4.setName("subMap");
+        //map中对应key名字
+        excelExportEntity4.setKey("subMap");
+        excelExportEntities.add(excelExportEntity4);
+
+
+        return excelExportEntities;
+    }
 
 }
