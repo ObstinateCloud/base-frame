@@ -6,6 +6,7 @@ spring:
   jpa:
     show-sql: true
 
+
 #mybatis-plus 打印日志
 mybatis-plus:
   configuration:
@@ -15,3 +16,4 @@ logging:
    tracer: trace
   file:
     path: log
+

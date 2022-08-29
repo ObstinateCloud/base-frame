@@ -65,7 +65,11 @@
 <li>集成easy-poi 
   <br>cvs导入导出
  </li>
-<li>集成itext7</li>
+ <li>集成druid连接池监控多数据源 <a href="https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter">官方文档</a>
+ </li>
+<li>集成itext7
+   pdf模板导出
+</li>
 <li>
  集成Security
 </li>
