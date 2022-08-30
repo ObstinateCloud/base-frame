@@ -3,39 +3,42 @@ package com.lenged.system.easypoi.csv;
 import cn.afterturn.easypoi.excel.annotation.Excel;
 import cn.afterturn.easypoi.excel.annotation.ExcelCollection;
 import cn.afterturn.easypoi.excel.annotation.ExcelEntity;
+import cn.afterturn.easypoi.excel.annotation.ExcelTarget;
 
 import java.util.Date;
 import java.util.List;
 
 /**
+ * @author JueYue
+ * 2014-09-22 16:03:32
+ * @version V1.0
  * @Title: Entity
  * @Description: 通讯录
- * @author JueYue
- *   2014-09-22 16:03:32
- * @version V1.0
- * 
  */
 @SuppressWarnings("serial")
+@ExcelTarget("msgClient")
 public class MsgClient implements java.io.Serializable {
-    /** id */
+    /**
+     * id
+     */
     private String id;
     // 电话号码(主键)
     @Excel(name = "电话号码")
-    private String           clientPhone = null;
+    private String clientPhone = null;
     // 客户姓名
-    @Excel(name = "姓名")
-    private String           clientName  = null;
+    @Excel(name = "姓名", needMerge = true)
+    private String clientName = null;
     // 所属分组
     @ExcelEntity(name = "所属分组")
-    private MsgClientGroup   group       = null;
+    private MsgClientGroup group = null;
     // 备注
     @Excel(name = "备注")
-    private String           remark      = null;
+    private String remark = null;
     // 生日
     @Excel(name = "出生日期", format = "yyyy-MM-dd", width = 20)
-    private Date             birthday    = null;
+    private Date birthday = null;
     // 创建人
-    private String           createBy    = null;
+    private String createBy = null;
 
     @ExcelCollection(name = "用户列表")
     private List<UserBean> userBeans;
@@ -142,7 +145,6 @@ public class MsgClient implements java.io.Serializable {
      * 方法: 设置java.lang.String
      *
      * @param remark
-     *
      * @param: java.lang.String 备注
      */
     public void setRemark(String remark) {

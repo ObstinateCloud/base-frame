@@ -62,8 +62,9 @@
   集成文件存储
   <br> minio <a href="http://docs.minio.org.cn/docs/">官网</a>
 </li>
-<li>集成easy-poi 
+<li>集成easy-poi <a href="https://gitee.com/lemur/easypoi-test">easy poi测试项目</a>
   <br>cvs导入导出
+  <br>excel导入导出
  </li>
  <li>集成druid连接池监控多数据源 <a href="https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter">官方文档</a>
  </li>
