@@ -333,6 +333,8 @@ public class ExcelTest {
         TemplateExportParams templateExportParams = new TemplateExportParams();
         templateExportParams.setTemplateUrl("template/excel/excelExportTemplate.xlsx");
         templateExportParams.setSheetNum(new Integer[]{0});
+        //设置开启横向遍历否则，不会自动横向遍历
+        templateExportParams.setColForEach(true);
 
         Map<String,Object> dataMap = new HashMap<>();
         Map<String,Object> subMap = new HashMap<>();
