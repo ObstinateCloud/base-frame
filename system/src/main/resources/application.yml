@@ -5,6 +5,10 @@ spring:
     active: nanri
   jpa:
     show-sql: true
+  security:
+    user:
+      name: admin
+      password: admin
 
 
 #mybatis-plus 打印日志
